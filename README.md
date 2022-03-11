@@ -8,7 +8,7 @@
 
 - [Built With](#built-with)
 
-- [Installation](#installation)
+- [Installation](#links)
 
 - [Authors](#authors)
 
@@ -41,30 +41,34 @@ THEN the deposits or expenses added while they were offline are added to their t
 
 
 ## Usage
+Budget This is a PWA budgeting app that allows users to track their income and expenses quickly and easily, with or without an online connection.
+Simply enter the name of the transaction and the amount then select if this is adding or subtracting for the current balance.
 
 
-
-## Built With
+## Built-With
 
 - JavaScript
 - CSS
 - HTML
-- Insomnia
 - MongoDB
 - NPM
   - Express
   - Mongoose
 
 
-## Installation
+## Links
+</br>
 
-In the terminal enter these commands:
+[![HEROKU APP - CLICK HERE](https://img.shields.io/badge/HEROKU_APP-CLICK_HERE-darkgreen?style=for-the-badge&logo=heroku)](https://budget--this.herokuapp.com/)
 
-```
-npm i
-```
+</br>
+
+[![GITHUB APP - CLICK HERE](https://img.shields.io/badge/GITHUB_APP-CLICK_HERE-black?style=for-the-badge&logo=github)](https://rehtribution.github.io/19-budget-this/)
+
+</br>
 
 ## Authors
+</br>
 
 [![GitHub Portfolio -> - Rehtribution](https://img.shields.io/badge/GitHub_Portfolio_-->-Rehtribution-darkred?style=for-the-badge)](https://github.com/Rehtribution)
 
