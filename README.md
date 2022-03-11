@@ -29,14 +29,8 @@ THEN the deposits or expenses added while they were offline are added to their t
 
 ## Screenshot/Media
 
-<h3 align="center">replace 1</h3>
+<h3 align="center">Heroku Deployment Screenshot</h3>
 
-![login-gif](https://github.com/Rehtribution/p2-TK0/blob/75666e094b6e491ff3873539ea8ebf64d7a1b364/public/media/Login.gif)
-
-<h3 align="center">2</h3>
-
-
-<h3 align="center">3</h3>
 
 
 

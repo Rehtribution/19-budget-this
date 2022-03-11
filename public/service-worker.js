@@ -1,7 +1,5 @@
-const APP_PREFIX = 'BudgetThis'
-const VERSION = 'Version_01'
-const CACHE_NAME = "static" + APP_PREFIX + VERSION;
-const DATA_CACHE_NAME = "data" + APP_PREFIX + VERSION;
+const CACHE_NAME = "BudgetThisVersion_01-static";
+const DATA_CACHE_NAME = "BudgetThisVersion_01-data";
 
 const FILES_TO_CACHE = [
     '/',
