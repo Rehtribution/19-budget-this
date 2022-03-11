@@ -4,7 +4,7 @@ const CACHE_NAME = "static" + APP_PREFIX + VERSION;
 const DATA_CACHE_NAME = "data" + APP_PREFIX + VERSION;
 
 const FILES_TO_CACHE = [
-    './',
+    '/',
     './server.js',
     './index.html',
     './manifest.json',
