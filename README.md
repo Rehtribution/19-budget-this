@@ -30,7 +30,9 @@ THEN the deposits or expenses added while they were offline are added to their t
 ## Screenshot/Media
 
 <h3 align="center">Heroku Deployment Screenshot</h3>
-![budget--this](/public/images/budget--this-heroku.png?raw=true "Heroku Deployment")
+</br>
+
+![image](https://user-images.githubusercontent.com/92597876/157994712-3defa019-ca71-4110-a34c-54d8b48a8348.png)
 
 
 
