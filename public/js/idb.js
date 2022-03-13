@@ -25,7 +25,7 @@ function checkDB() {
     // create transaction in db
     const transaction = db.transaction(["new_item"], "readwrite");
     // access the object store
-    const store = transaction.objectStore(["new_item"]);
+    const store = transaction.objectStore("new_item");
     // get all records from the store and assign variable
     const getAll = store.getAll();
 
