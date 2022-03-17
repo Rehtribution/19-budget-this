@@ -5,7 +5,7 @@ fetch("/api/transaction")
   .then(response => {
     return response.json();
   })
-  .then(data => {
+  .then((data) => {
     // save db data on global variable
     transactions = data;
 
@@ -46,13 +46,13 @@ function populateChart() {
   let sum = 0;
 
   // create date labels for chart
-  let labels = reversed.map(t => {
+  let labels = reversed.map((t) => {
     let date = new Date(t.date);
     return `${date.getMonth() + 1}/${date.getDate()}/${date.getFullYear()}`;
   });
 
   // create incremental values for chart
-  let data = reversed.map(t => {
+  let data = reversed.map((t) => {
     sum += parseInt(t.value);
     return sum;
   });
@@ -65,7 +65,7 @@ function populateChart() {
   let ctx = document.getElementById("myChart").getContext("2d");
 
   myChart = new Chart(ctx, {
-    type: 'line',
+    type: "line",
       data: {
         labels,
         datasets: [{
@@ -121,10 +121,10 @@ function sendTransaction(isAdding) {
       "Content-Type": "application/json"
     }
   })
-  .then(response => {    
+  .then((response) => {    
     return response.json();
   })
-  .then(data => {
+  .then((data) => {
     if (data.errors) {
       errorEl.textContent = "Missing Information";
     }
@@ -134,7 +134,7 @@ function sendTransaction(isAdding) {
       amountEl.value = "";
     }
   })
-  .catch(err => {
+  .catch((err) => {
     // fetch failed, so save in indexed db
     saveRecord(transaction);
 

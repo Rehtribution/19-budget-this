@@ -3,11 +3,11 @@ const VERSION = 'version_01';
 const CACHE_NAME = APP_PREFIX + VERSION;
 
 const FILES_TO_CACHE = [
-    './index.html',
-    './js/idb.js',
-    './js/index.js',
-    './manifest.json',
-    './css/styles.css',
+    '../index.html',
+    '../js/idb.js',
+    '../js/index.js',
+    '../manifest.json',
+    '../css/styles.css',
     './icons/icon-72x72.png',
     './icons/icon-96x96.png',
     './icons/icon-128x128.png',
@@ -25,8 +25,9 @@ self.addEventListener('install', function (e) {
             console.log('Your files were pre-cached successfully!');
             return cache.addAll(FILES_TO_CACHE);
         })
-    )
-});
+    );
+  });
+  self.skipWaiting();
 
 // Activate the service worker and remove old data from the cache
 self.addEventListener('activate', function (e) {
@@ -45,25 +46,32 @@ self.addEventListener('activate', function (e) {
                 }
             }));
         })
-    )
+    );
+    self.clients.claim();
 });
 
 // Respond with cached resources
-self.addEventListener('fetch', function (e) {
-    // console.log('fetch request : ' + e.request.url)
-    e.respondWith(
+self.addEventListener("fetch", function (e) {
+    if (e.request.url.includes("/api/")) {
+      e.respondWith(
         caches
-        // .match(e.request)
-        .open(CACHE_NAME)
-        .then(function (response) {
-            if (response) { // if cache is available, respond with cache
-                // console.log('responding with cache : ' + e.request.url)
-                return response
-            } else {       // if there are no cache, try fetching request
-                console.log('file is not cached, fetching : ' + e.request.url)
-                return fetch(e.request)
-            }
-        })
-    )
-});
-
+          .open(CACHE_NAME)
+          .then((cache) => {
+            return fetch(e.request)
+              .then((response) => {
+                if (response.status === 200) {
+                  cache.put(e.request.url, response.clone());
+                }
+  
+                return response;
+              })
+              .catch((err) => {
+                return cache.match(e.request);
+              });
+          })
+          .catch((err) => console.log(err))
+      );
+  
+      return;
+    }
+  });
